@@ -11,3 +11,116 @@
  Tags:         
  Text Domain:  enfold-child
 */
+
+/* -----------------Logo Style-------------------------- */
+#header_main .av-logo-container {
+	padding-left:0px;
+	padding-right:0px;
+}
+
+#header_main .av-logo-container .logo img {
+	padding-top:20px;
+}
+
+.header-scrolled #header_main .av-logo-container .logo img {
+	padding-top:0px;
+}
+
+
+/* -----------------Main Menu Style--------------------- */
+/* Main Menu */
+#header_main_alternate {
+	background-color:#fff;
+}
+
+#header_main_alternate > .container {
+	padding:0px;
+}
+
+#header_main_alternate a:hover {
+	color:#4074cb;
+}
+
+#avia-menu .avia-menu-fx{
+	background-color:#4074cb;
+	border-bottom-color:#4074cb;
+}
+
+#avia-menu .current-menu-item .avia-menu-text {
+	color:#4074cb;
+}
+
+/* Dropdown Menu */
+#avia-menu .sub-menu {
+	border-top-color:#4074cb;
+}
+
+#avia-menu .sub-menu a:hover {
+	color:#4074cb;
+}
+
+
+/* -------------------Body Style----------------------- */
+#main {
+	background:#fff;
+}
+#main .main-color, .alter-color {
+	max-width:1200px !important;
+	margin:auto;
+}
+
+#main .container {
+	padding-left:0px;
+	padding-right:0px;
+}
+#main .content, .sidebar {
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+/* -------------------Search Style---------------------- */
+#mainsearch #searchsubmit {
+	width:100px;
+	height:41px;
+	background-color:#4074cb;
+	border:solid 2px #4074cb;
+	border-radius: 0px 5px 5px 0px;
+	-moz-border-radius: 0px 5px 5px 0px;
+	-webkit-border-radius: 0px 5px 5px 0px;
+}
+
+#mainsearch #s {
+	width:100%;
+	border:solid 2px #4074cb;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+}
+
+
+/* -------------------Footer Style---------------------- */
+.footer-title {
+	background:url("images/cg16_home_foot_title_bg.png") center no-repeat;
+}
+
+/* -------------------Socket Style---------------------- */
+#socket #socket-company-detail-wrapper {
+	background-color:#fffdf8;
+}
+
+#socket #socket-company-detail-wrapper #socket-company-detail .company-detail{
+	font-size:18px;
+}
+
+#socket #socket-links h3 {
+	text-align:center;
+}
+
+#socket #socket-links #friendly-links {
+	font-size:12px;
+}
+
+/* ----------------------General Style------------------ */
+.no-padding {padding:0px;}
+.font-bold {font-weight:bold;}
+.font-center {text-align:center;}
