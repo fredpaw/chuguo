@@ -760,7 +760,7 @@ if(!function_exists('avia_new_section'))
 					$markup = "div";
 				}
 				
-		        $output .= "<div class='container' {$container_style}>";
+		        $output .= "<div class='container' id='page-content'{$container_style}>";
 		        $output .= "<{$markup} class='template-page content  ".avia_layout_class( 'content' , false )." units'>";
 		        $output .= "<div class='post-entry post-entry-type-page {$post_class}'>";
 		        $output .= "<div class='entry-content-wrapper clearfix'>";

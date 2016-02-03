@@ -78,6 +78,7 @@ if ( defined('WP_USE_THEMES') && WP_USE_THEMES ) :
 	else :
 		$template = get_index_template();
 	endif;
+
 	/**
 	 * Filter the path of the current template before including it.
 	 *

@@ -21,9 +21,8 @@ global $avia_config;
 
 			<div class='container'>
 
-				<main class='content template-search <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>
-
-                    <div class='page-heading-container clearfix'>
+				<main class='content template-search <?php avia_layout_class( 'content' ); ?> units' <?php avia_markup_helper(array('context' => 'content'));?>>				
+					<div class='page-heading-container clearfix'>
                         <section class="search_form_field">
                             <?php
                             echo "<h4>".__('New Search','avia_framework')."</h4>";

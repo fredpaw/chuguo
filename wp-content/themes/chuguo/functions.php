@@ -287,7 +287,7 @@ function pageslidertitle_func() {
 		$link_array = explode('/', str_replace(get_bloginfo('url').'/', '' ,get_the_permalink()));
 		$title = $link_array[0];
 	} else if( is_single() ) {
-		$cate = get_the_cat();
+		$cate = get_the_category();
 		$cslug = $cate->slug;
 		if( $cslug = 'experience_info')
 			$title = 'experience-and-consulting';
@@ -332,6 +332,20 @@ function pageslidertitle_func() {
 }
 add_shortcode ('pageslidertitle','pageslidertitle_func');
 
+// Get Author Infos
+// [getauthor]
+function getauthor_func() {
+	$author_id		= get_the_author_id();
+	$firstname 		= get_the_author_meta('first_name', $author_id);
+	$lastname 		= get_the_author_meta('last_name', $author_id);
+	$descriptions	= get_the_author_meta('description', $author_id);
+	$author_avatar 	= get_avatar($author_id);
+	$author_des		= explode(';', $descriptions);
+	$html = '<div id="author_meta_infos"><p>'.$author_avatar.'<span>'.$lastname.'老师 '.$firstname.'</span></p><p><img src="'.get_stylesheet_directory_uri().'/images/cg16_icon_QQ.png"/> <span>'.trim($author_des[0]).'</span> <img src="'.get_stylesheet_directory_uri().'/images/cg16_icon_phone.png" /> <span>'.trim($author_des[1]).'</span> <img src="'.get_stylesheet_directory_uri().'/images/cg16_icon_weixin.png" /> <span>'.trim($author_des[2]).'</span></p></div>';
+	return $html;
+}
+add_shortcode ('getauthor', 'getauthor_func');
+
 /**
 *	Post Excerpt Changes
 */
@@ -346,5 +360,29 @@ function custom_excerpt_length( $length ) {
 	return 25;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-?>
 
+/**
+*	Add customize JS and CSS
+*/
+// Add consult.css to consult list page
+function custom_post_styles() {
+	if (is_single()) return;
+	global $post;
+	$customCSS = get_post_meta($post->ID, 'custom-css', false);
+	if (empty($customCSS)) return;
+	$styleNum = 1;
+	foreach ($customCSS as $CSS) {
+		$styleID = 'post-style' . $styleNum;
+		wp_register_style(
+			$styleID,
+			$CSS,
+			false,
+			null,
+			'all'
+		);
+		wp_enqueue_style($styleID);
+		$styleNum++;
+	}
+}
+add_action('wp_enqueue_scripts', 'custom_post_styles', 11);
+?>
