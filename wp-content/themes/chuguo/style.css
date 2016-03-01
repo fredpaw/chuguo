@@ -411,6 +411,11 @@ div .av_one_half {margin-left:3%; width:48.5%;}
 	font-size:12px;
 }
 
+#socket #socket-links #friendly-links a:hover  {
+	color:#000;
+	font-size:12px;
+}
+
 /* ----------------------Home Page Style----------------- */
 /* hotlink block style */
 #homepage-hotlink {
